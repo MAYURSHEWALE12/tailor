@@ -1,9 +1,6 @@
 class ApiConfig {
-  // --- UPDATE THIS IP ---
-  // Your computer's local IP on this network: 172.20.10.9
-  // Android emulator: 10.0.2.2
-  // iOS simulator: localhost
-  static const String baseUrl = 'http://172.20.10.9:5000/api';
+  // Cloud server (Render)
+  static const String baseUrl = 'https://tailor-p2y2.onrender.com/api';
 
   static const String auth = '$baseUrl/auth';
   static const String customers = '$baseUrl/customers';
