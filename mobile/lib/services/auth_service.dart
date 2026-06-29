@@ -7,6 +7,7 @@ class AuthService {
     required String name,
     required String phone,
     required String password,
+    required String shopName,
   }) async {
     final data = await ApiClient.post(
       '${ApiConfig.auth}/register',
@@ -14,6 +15,7 @@ class AuthService {
         'name': name,
         'phone': phone,
         'password': password,
+        'shopName': shopName,
       },
     );
     final user = User.fromJson(data);

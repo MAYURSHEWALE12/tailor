@@ -30,7 +30,7 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> register(String name, String phone, String password) async {
+  Future<bool> register(String name, String phone, String password, String shopName) async {
     try {
       _status = AuthStatus.loading;
       _error = null;
@@ -40,6 +40,7 @@ class AuthProvider extends ChangeNotifier {
         name: name,
         phone: phone,
         password: password,
+        shopName: shopName,
       );
       _status = AuthStatus.authenticated;
       notifyListeners();

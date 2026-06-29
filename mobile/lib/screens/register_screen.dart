@@ -14,6 +14,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
+  final _shopNameController = TextEditingController();
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confirmPasswordController = TextEditingController();
@@ -23,6 +24,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   void dispose() {
     _nameController.dispose();
+    _shopNameController.dispose();
     _phoneController.dispose();
     _passwordController.dispose();
     _confirmPasswordController.dispose();
@@ -39,6 +41,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       _nameController.text.trim(),
       _phoneController.text.trim(),
       _passwordController.text,
+      _shopNameController.text.trim(),
     );
 
     if (!mounted) return;
@@ -219,6 +222,52 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                     validator: (v) {
                                       if (v == null || v.trim().isEmpty) {
                                         return 'Please enter your name';
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                  const SizedBox(height: 14),
+                                  TextFormField(
+                                    controller: _shopNameController,
+                                    style: const TextStyle(color: Colors.white),
+                                    decoration: InputDecoration(
+                                      labelText: 'Shop Name',
+                                      labelStyle: TextStyle(
+                                        color: Colors.white.withValues(alpha: 0.7),
+                                      ),
+                                      prefixIcon: Icon(
+                                        Icons.store_outlined,
+                                        color: Colors.white.withValues(alpha: 0.7),
+                                      ),
+                                      filled: true,
+                                      fillColor: Colors.white.withValues(alpha: 0.08),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide.none,
+                                      ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: BorderSide(
+                                          color: Colors.white.withValues(alpha: 0.1),
+                                        ),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: const BorderSide(
+                                          color: AppTheme.accent,
+                                          width: 1.5,
+                                        ),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                        borderSide: const BorderSide(
+                                          color: AppTheme.danger,
+                                        ),
+                                      ),
+                                    ),
+                                    validator: (v) {
+                                      if (v == null || v.trim().isEmpty) {
+                                        return 'Please enter your shop name';
                                       }
                                       return null;
                                     },
