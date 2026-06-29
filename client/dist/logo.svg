@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60">
+  <rect width="240" height="60" fill="none" />
+  <path d="M20 30 C 20 20, 35 20, 35 30 C 35 40, 20 40, 20 30 M35 30 L 50 30" stroke="#1A3A5C" stroke-width="2.5" fill="none" />
+  <circle cx="20" cy="30" r="3" fill="#D4A017" />
+  <text x="60" y="42" font-family="Poppins, sans-serif" font-weight="bold" font-size="28" fill="#1A3A5C">Shivaay</text>
+  <text x="165" y="42" font-family="Poppins, sans-serif" font-weight="bold" font-size="28" fill="#D4A017">Tailor</text>
+</svg>
